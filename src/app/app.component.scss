@@ -1,4 +1,29 @@
 $primary-green: #3F5D45;
+$primary-yellow: #FFE180;
+
+%center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin bg-img($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin bg-blur($range) {
+  -webkit-filter: blur($range);
+  -moz-filter: blur($range);
+  -o-filter: blur($range);
+  -ms-filter: blur($range);
+  filter: blur($range);
+}
 
 /** 共用區域開始 **/
 
@@ -76,18 +101,65 @@ header {
 
 }
 
+.outer-space {
+  display: flex;
+}
+
 .banner {
+  @include bg-img('../assets/image/annie-spratt-unsplash.jpg');
+  flex: 1;
   padding: 140px 0;
-  background-image: url('../assets/image/annie-spratt-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+
+.activity {
+  position: relative;
+  flex: 1;
+
+  .bg {
+    padding: 90px 0;
+    @include bg-blur(2px);
+  }
+
+  .blur-content {
+    writing-mode: vertical-lr;
+    background-color: $primary-green;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #ffffff;
+    opacity: 0.8;
+    @extend %center;
+
+    &:hover {
+      background-color: $primary-yellow;
+      color: $primary-green;
+      font-weight: bold;
+    }
+
+  }
+
+  &:nth-child(1) .bg {
+    @include bg-img('../assets/image/brooke-lark.jpg');
+  }
+
+  &:nth-child(2) .bg {
+    @include bg-img('../assets/image/whitney-wright.jpg');
+  }
+
+  &:nth-child(3) .bg {
+    @include bg-img('../assets/image/food-photographer.jpg');
+  }
+
 }
 
 @media screen and (min-width: 1024px) {
 
   .outer-space {
     padding: 0 40px;
+
+    &.lg-space {
+      padding: 0 120px;
+    }
+
   }
 
   header {
@@ -122,6 +194,15 @@ header {
 
   .cart {
     margin-left: 60px;
+  }
+
+  .activity {
+    transform: translateY(-50px);
+
+    .bg {
+      padding: 130px 0;
+    }
+
   }
 
 }
