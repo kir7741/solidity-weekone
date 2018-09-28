@@ -1,5 +1,7 @@
 $primary-green: #3F5D45;
 
+/** 共用區域開始 **/
+
 * {
   box-sizing: border-box;
 }
@@ -10,14 +12,22 @@ img {
   max-width: 100%;
 }
 
+/** 共用區域結束 **/
+
 header {
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px;
+
+  & + div {
+    margin-top: 65px;
+  }
+
 }
 
 .menu-icon:after {
@@ -66,10 +76,27 @@ header {
 
 }
 
+.banner {
+  padding: 140px 0;
+  background-image: url('../assets/image/annie-spratt-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @media screen and (min-width: 1024px) {
+
+  .outer-space {
+    padding: 0 40px;
+  }
 
   header {
     padding: 30px 40px;
+
+    & + div {
+      margin-top: 100px;
+    }
+
   }
 
   .menu-icon {
