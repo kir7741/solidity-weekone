@@ -1,5 +1,7 @@
 $primary-green: #3F5D45;
 $primary-yellow: #FFE180;
+$light-green: #8DA291;
+$lighter-green: #EAF0ED;
 
 %center {
   position: absolute;
@@ -80,6 +82,67 @@ $primary-yellow: #FFE180;
 
 }
 
+.infro-box {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    padding: 20px 0;
+    color: $primary-green;
+    font-size: 24px;
+    text-align: center;
+
+    p {
+      margin-bottom: 0.5rem;
+      letter-spacing: 6px;
+    }
+
+    .horizontal-line:after {
+      content: '-------';
+      letter-spacing: -3px;
+    }
+
+  }
+
+  .img {
+    padding: 125px 0;
+  }
+
+  .text {
+    padding: 30px;
+    background-color: $lighter-green;
+
+    p {
+      color: $light-green;
+      font-size: 16px;
+      line-height: 30px;
+
+      &:last-child {
+        margin: 0;
+      }
+
+    }
+
+  }
+
+  &.session-1 {
+
+    .img {
+      @include bg-img('../../assets/image/le-buzz.jpg');
+    }
+
+  }
+
+  &.session-2 {
+
+    .img {
+      @include bg-img('../../assets/image/monika-grabkowska.jpg');
+    }
+
+  }
+
+}
+
 @media screen and (min-width: 1024px) {
 
   .outer-space {
@@ -100,6 +163,64 @@ $primary-yellow: #FFE180;
 
     .bg {
       padding: 130px 0;
+    }
+
+  }
+
+  .infro-box {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 0 40px;
+    height: 420px;
+    background-color: $lighter-green;
+
+    .title {
+      order: 3;
+      padding: 0;
+      writing-mode: vertical-rl;
+
+      p {
+        margin: 0;
+        font-size: 34px;
+        text-align: left;
+      }
+
+      .horizontal-line {
+        display: block;
+        transform: translateY(-20px);
+
+        &:after {
+          letter-spacing: -6px;
+        }
+
+      }
+
+    }
+
+    .img {
+      padding: 0 230px;
+      transform: scaleY(1.1);
+    }
+
+    .text {
+      padding: 50px 10px;
+      writing-mode: vertical-rl;
+
+      p {
+        margin: 0 20px;
+        line-height: 40px;
+      }
+
+    }
+
+    &.session-2 {
+      margin-top: 100px;
+
+      .img {
+        order: 3;
+      }
+
     }
 
   }
