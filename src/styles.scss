@@ -1,12 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
+/** 共用區域開始 **/
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/** 共用區域結束 **/
+
 .horizontal-line:after {
   content: '-------';
   letter-spacing: -3px;
 }
 
 @media screen and (min-width: 1024px) {
+
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1024px;
+  }
 
   .horizontal-line {
     display: block;

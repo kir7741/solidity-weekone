@@ -1,19 +1,5 @@
 $primary-green: #3F5D45;
 
-/** 共用區域開始 **/
-
-* {
-  box-sizing: border-box;
-}
-
-img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-}
-
-/** 共用區域結束 **/
-
 header {
   position: fixed;
   top: 0;
@@ -25,6 +11,13 @@ header {
   padding: 20px 30px;
   background-color: #ffffff;
   z-index: 10;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 .menu-icon:after {
