@@ -13,6 +13,7 @@ $lighter-green: #EAF0ED;
   align-items: center;
   justify-content: center;
 }
+
 @mixin bg-img($url) {
   background-image: url($url);
   background-size: cover;
@@ -97,11 +98,6 @@ $lighter-green: #EAF0ED;
       letter-spacing: 6px;
     }
 
-    .horizontal-line:after {
-      content: '-------';
-      letter-spacing: -3px;
-    }
-
   }
 
   .img {
@@ -137,6 +133,111 @@ $lighter-green: #EAF0ED;
 
     .img {
       @include bg-img('../../assets/image/monika-grabkowska.jpg');
+    }
+
+  }
+
+}
+
+.product-box {
+
+  .title {
+    padding: 20px 0;
+    color: $primary-green;
+    font-size: 24px;
+    text-align: center;
+
+    p {
+      margin-bottom: 0.5rem;
+      letter-spacing: 6px;
+    }
+
+  }
+
+  .products {
+    padding: 0 30px;
+    margin-bottom: 30px;
+  }
+
+  .product-card {
+    position: relative;
+
+    .img {
+      padding-top: 100%;
+    }
+
+    .text {
+      position: absolute;
+      top: 0;
+      left: 15px;
+      padding: 10px 7px;
+      color: #ffffff;
+      font-size: 16px;
+      background-color: $primary-green;
+      writing-mode: vertical-rl;
+      letter-spacing: 6px;
+      text-align: center;
+    }
+
+    .icon {
+      position: absolute;
+      display: inline-block;
+      top: 15px;
+      right: 20px;
+    }
+
+    .information {
+      display: flex;
+      border-left: 1px solid $lighter-green;
+      border-right: 1px solid $lighter-green;
+      font-size: 20px;
+
+      span {
+        flex: 1;
+        padding: 15px 10px;
+        text-align: center;
+        color: $primary-green;
+      }
+
+      span:nth-child(1) {
+        border-right: 1px solid $lighter-green;
+        color: $primary-green;
+        font-weight: lighter;
+      }
+
+      span:nth-child(2) {
+        font-weight: bold;
+      }
+
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      border: 1px solid $lighter-green;
+      padding: 15px 20px;
+      background-color: $lighter-green;
+      font-size: 24px;
+      color: $primary-green;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    &:nth-child(1) .img {
+      @include bg-img('../../assets/image/heather-schwartz.jpg');
+    }
+
+    &:nth-child(2) .img {
+      @include bg-img('../../assets/image/food-cake.jpg');
+    }
+
+    &:nth-child(3) .img {
+      @include bg-img('../../assets/image/rezel-apacionado.jpg');
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      display: none;
     }
 
   }
@@ -186,21 +287,12 @@ $lighter-green: #EAF0ED;
         text-align: left;
       }
 
-      .horizontal-line {
-        display: block;
-        transform: translateY(-20px);
-
-        &:after {
-          letter-spacing: -6px;
-        }
-
-      }
-
     }
 
     .img {
+      margin-left: 25px;
       padding: 0 230px;
-      transform: scaleY(1.1);
+      transform: scale(1.1);
     }
 
     .text {
@@ -219,6 +311,48 @@ $lighter-green: #EAF0ED;
 
       .img {
         order: 3;
+        margin-left: 0;
+        margin-right: 25px;
+      }
+
+    }
+
+  }
+
+  .product-box {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      align-self: center;
+      margin: 140px 0 100px;
+      padding: 0;
+      font-size: 34px;
+      text-align: left;
+      writing-mode: vertical-rl;
+
+      .horizontal-line {
+        transform: translateY(-25px);
+      }
+
+    }
+
+    .products {
+      display: flex;
+      padding: 0 40px;
+    }
+
+    .product-card {
+      flex: 1;
+      margin-right: 20px;
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: block;
+      }
+
+      &:nth-child(3) {
+        margin-right: 0;
       }
 
     }
