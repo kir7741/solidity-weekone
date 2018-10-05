@@ -13,6 +13,11 @@ img {
   max-width: 100%;
 }
 
+button:focus,
+input:focus{
+  outline: none;
+}
+
 /** 共用區域結束 **/
 
 .horizontal-line:after {
