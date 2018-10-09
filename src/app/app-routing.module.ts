@@ -3,6 +3,7 @@ import { RouterModule, Routes, Route, PreloadAllModules } from '@angular/router'
 
 // Component
 import { HomeComponent } from './home/home.component';
+import { ProductComponent } from './product/product.component';
 
 // Constants
 import { appRoutePath } from './app-route-path.const';
@@ -10,6 +11,11 @@ import { appRoutePath } from './app-route-path.const';
 const homeRoute: Route = {
   path: appRoutePath.home,
   component: HomeComponent
+};
+
+const productRoute: Route = {
+  path: appRoutePath.product,
+  component: ProductComponent
 };
 
 const defaultRoute: Route = {
@@ -20,6 +26,7 @@ const defaultRoute: Route = {
 
 const routes: Routes = [
   homeRoute,
+  productRoute,
   defaultRoute
 ];
 

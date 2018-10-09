@@ -8,4 +8,9 @@ export const appRoutePath = {
    */
   home: 'home',
 
+  /**
+   * 甜點
+   */
+  product: 'product'
+
 };
