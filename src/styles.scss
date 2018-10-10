@@ -25,6 +25,15 @@ input:focus{
   letter-spacing: -3px;
 }
 
+.outer-space {
+  display: flex;
+}
+
+.banner {
+  flex: 1;
+  padding: 140px 0;
+}
+
 @media screen and (min-width: 1024px) {
 
   .wrapper {
@@ -40,6 +49,19 @@ input:focus{
       letter-spacing: -6px;
     }
 
+  }
+
+  .outer-space {
+    padding: 0 40px;
+
+    &.lg-space {
+      padding: 0 120px;
+    }
+
+  }
+
+  .banner {
+    padding: 250px 0;
   }
 
 }

@@ -20,6 +20,7 @@ $lighter-green: #EAF0ED;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 @mixin bg-blur($range) {
   -webkit-filter: blur($range);
   -moz-filter: blur($range);
@@ -30,12 +31,9 @@ $lighter-green: #EAF0ED;
 
 .banner {
   @include bg-img('../../assets/image/annie-spratt-unsplash.jpg');
-  flex: 1;
-  padding: 140px 0;
 }
 
 .outer-space {
-  display: flex;
 
   &:first-child {
     margin-top: 65px;
@@ -362,14 +360,9 @@ footer {
 @media screen and (min-width: 1024px) {
 
   .outer-space {
-    padding: 0 40px;
 
     &:first-child {
       margin-top: 100px;
-    }
-
-    &.lg-space {
-      padding: 0 120px;
     }
 
   }
@@ -393,6 +386,7 @@ footer {
 
     .title {
       order: 3;
+      margin-right: 20px;
       padding: 0;
       writing-mode: vertical-rl;
 
@@ -406,7 +400,7 @@ footer {
 
     .img {
       margin-left: 25px;
-      padding: 0 230px;
+      padding: 0 205px;
       transform: scale(1.1);
     }
 
