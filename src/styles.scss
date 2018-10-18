@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
+$primary-green: #3F5D45;
+$primary-yellow: #FFE180;
+$light-green: #8DA291;
+$lighter-green: #EAF0ED;
+
 /** 共用區域開始 **/
 
 * {
@@ -32,6 +37,72 @@ input:focus{
 .banner {
   flex: 1;
   padding: 140px 0;
+}
+
+.product-card {
+  position: relative;
+
+  .img {
+    padding-top: 100%;
+  }
+
+  .text {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    padding: 10px 7px;
+    color: #ffffff;
+    font-size: 16px;
+    background-color: $primary-green;
+    writing-mode: vertical-rl;
+    letter-spacing: 6px;
+    text-align: center;
+  }
+
+  .icon {
+    position: absolute;
+    display: inline-block;
+    top: 15px;
+    right: 20px;
+  }
+
+  .information {
+    display: flex;
+    border-left: 1px solid $lighter-green;
+    border-right: 1px solid $lighter-green;
+    font-size: 20px;
+
+    span {
+      flex: 1;
+      padding: 15px 10px;
+      text-align: center;
+      color: $primary-green;
+    }
+
+    span:nth-child(1) {
+      border-right: 1px solid $lighter-green;
+      color: $primary-green;
+      font-weight: lighter;
+    }
+
+    span:nth-child(2) {
+      font-weight: bold;
+    }
+
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    border: 1px solid $lighter-green;
+    padding: 15px 20px;
+    background-color: $lighter-green;
+    font-size: 24px;
+    color: $primary-green;
+    font-weight: bold;
+    text-align: center;
+  }
+
 }
 
 @media screen and (min-width: 1024px) {

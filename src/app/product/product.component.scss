@@ -1,0 +1,176 @@
+$primary-green: #3F5D45;
+$primary-yellow: #FFE180;
+$light-green: #8DA291;
+$lighter-green: #EAF0ED;
+
+@mixin bg-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin left-triangel($color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 8px 5px 0;
+  border-color: transparent $color transparent transparent;
+}
+
+@mixin right-triangel($color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent $color;
+  transform: translateX(50%);
+}
+
+.banner {
+  @include bg-img;
+  background-image: url('../../assets/image/toa-heftiba.jpg');
+  position: relative;
+
+  .title {
+    position: absolute;
+    top: 20%;
+    right: 20px;
+    writing-mode: vertical-rl;
+
+    p {
+      margin: 0;
+      font-size: 26px;
+      color: $primary-green;
+    }
+
+    p:first-child {
+      transform: translateY(-20px);
+    }
+
+  }
+
+}
+
+.outer-space {
+
+  &:first-child {
+    margin-top: 65px;
+  }
+
+}
+
+.content {
+  flex-direction: column;
+}
+
+.category {
+
+  & > div {
+    padding: 15px 0;
+    background-color: $primary-green;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    padding: 15px 0;
+    background-color: white;
+    color: $primary-green;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid $lighter-green;
+
+    &:hover {
+      background-color: $lighter-green;
+    }
+  }
+
+}
+
+.list {
+  padding: 30px;
+}
+
+.product-card {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .img {
+    @include bg-img;
+  }
+
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6) {
+    display: none;
+  }
+
+}
+
+.custom-pagination {
+  display: flex;
+
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+  }
+
+  li {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border: 1px solid $lighter-green;
+    border-right: none;
+    font-size: 20px;
+
+    &:hover:not(:first-child):not(:last-child) {
+      background-color: $primary-green;
+      color: #ffffff;
+    }
+
+  }
+
+  & li:first-child > span {
+    @include left-triangel($primary-green);
+  }
+
+
+  & li:last-child {
+    border-right: 1px solid $lighter-green;
+
+    & > span {
+      @include right-triangel($primary-green);
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  .outer-space {
+
+    &:first-child {
+      margin-top: 100px;
+    }
+
+  }
+
+}
