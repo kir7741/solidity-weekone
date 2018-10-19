@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FooterModule } from '../footer/footer.module';
 import { ProductComponent } from './product.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FooterModule
   ],
   declarations: [ProductComponent]
 })

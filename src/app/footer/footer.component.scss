@@ -1,0 +1,176 @@
+$primary-green: #3F5D45;
+$primary-yellow: #FFE180;
+$light-green: #8DA291;
+$lighter-green: #EAF0ED;
+
+footer {
+
+  .dark-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: $primary-green;
+
+    .icon {
+      margin-right: 20px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .text {
+      display: flex;
+      padding: 10px 0 30px;
+      color: #ffffff;
+      font-size: 24px;
+    }
+
+  }
+
+  .mail-box {
+    display:flex;
+    align-items: center;
+    width: 100%;
+    background-color: $lighter-green;
+
+    .icon {
+      margin: 0;
+      padding: 15px;
+      width: auto;
+      height: auto;
+    }
+
+    input {
+      flex: 1;
+      padding: 0 10px;
+      border: none;
+      background-color: $lighter-green;
+    }
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+      flex: 0 0 60px;
+      background-color: $primary-yellow;
+
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+  }
+
+  .light-area {
+    padding: 30px;
+    background-color: $lighter-green;
+
+    & > div:first-child {
+
+    }
+
+    .logo {
+      width: 170px;
+    }
+
+    .info {
+      padding: 30px 0;
+
+      p {
+        margin-bottom: 0px;
+        color: $primary-green;
+      }
+
+    }
+
+    .slogan {
+      display: none;
+    }
+
+    .social-media {
+      margin-bottom: 20px;
+
+      img {
+        display: inline-block;
+        width: 35px;
+
+        &:first-child {
+          margin-right: 10px;
+        }
+
+      }
+
+    }
+
+    .copy-right {
+      color: $primary-green;
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  footer {
+
+    .dark-area {
+      flex-direction: row;
+      justify-content: space-around ;
+
+      .text {
+        flex: 0 0 auto;
+        padding: 0;
+      }
+
+      .mail-box {
+        width: 380px;
+      }
+
+    }
+
+    .light-area {
+      padding: 65px 100px 15px;
+
+      & > div {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      & > div:nth-child(2) {
+        align-items: center;
+      }
+
+      .slogan {
+        display: block;
+        writing-mode: vertical-rl;
+
+        .horizontal-line:after {
+          letter-spacing: -3px;
+        }
+
+        p {
+          color: $primary-green;
+          font-size: 24px;
+          letter-spacing: 10px;
+        }
+
+        p:first-child {
+          margin-right: 0;
+        }
+
+      }
+
+      .contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+    }
+
+  }
+
+}
